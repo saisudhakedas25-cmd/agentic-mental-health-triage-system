@@ -115,6 +115,6 @@ print("Total Chunks :", len(chunks))
 print("\nSystem Ready.")
 
 # Note:
-1)  code works perfectly fine --- after the tab/cell : Loading all the pkl files and models from here for RAG without XAI--i.e. because after training completion, all the saved models are called here onwards
+1)  code works perfectly fine --- after the tab/cell in .ipynb file: Loading all the pkl files and models from here for RAG without XAI--i.e. because after training completion, all the saved models are called here onwards
 2)  End to End Coding pipeline works perfectly fine on my personal Laptop and all test cases are checked, if anything is needed , I am happy to resolve the issue.
 
