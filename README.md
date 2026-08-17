@@ -33,9 +33,7 @@ Because the fine-tuned RoBERTa model file is large (560 MB), it is not stored di
 you have to use following code --as all .pkl, .modeltensor files are present in google drive.
 
 
-# if it is not working - you can contact me via email. I am happy to resolve the issue.
 
-# code works perfectly fine --- after the tab : Loading all the pkl files and models from here for RAG without XAI--i.e. after training , all the models are invoked here onwards
 
 ##  Core Initialization & Asset Pipeline
 
@@ -61,7 +59,7 @@ FAISS_INDEX_PATH = "./faiss.index"
 CHUNKS_PATH = "./chunks.pkl"
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
-# Helper function to auto-download large files from Google Drive if they don't exist
+# Helper function 
 def verify_and_download_assets():
     # Example mapping: local path to its Google Drive shared file link
     assets = {
@@ -115,4 +113,8 @@ with open(CHUNKS_PATH, "rb") as f:
 print("Total Chunks :", len(chunks))
 
 print("\nSystem Ready.")
+
+# Note:
+1)  code works perfectly fine --- after the tab/cell : Loading all the pkl files and models from here for RAG without XAI--i.e. because after training completion, all the models are invoked here onwards
+2)  End to End Coding pipeline works perfectly fine on my personal Laptop and all test cases are checked, if anything is needed , I am happy to resolve the issue.
 
