@@ -8,14 +8,14 @@ An Agentic RAG-based NLP system for explainable depression-risk assessment from 
 
 This project combines:
 
-- RoBERTa → Multi-label depression symptom classification
-- Risk Assessment → Calculates risk score and risk category
-- SHAP → Explains symptom-level predictions
-- NICE Guidelines → Clinical knowledge source
-- Sentence Transformers + FAISS → Semantic guideline retrieval
-- RAG + LLM → Generates grounded clinical explanations
-- Multi-Agent Workflow→ Coordinates the different system components
-- Gradio → Interactive user interface
+- RoBERTa -> Multi-label depression symptom classification
+- Risk Assessment -> Calculates risk score and risk category
+- SHAP -> Explains symptom-level predictions
+- NICE Guidelines -> Clinical knowledge source
+- Sentence Transformers + FAISS -> Semantic guideline retrieval
+- RAG + LLM -> Generates grounded clinical explanations
+- Multi-Agent Workflow -> Coordinates the different system components
+- Gradio -> Interactive user interface
 
 ##  System Pipeline
 
@@ -28,17 +28,15 @@ Multi-Agent Workflow -> Clinical Explanation / Summary
 
 ## Model Storage & Automated Setup
 
-Because the fine-tuned RoBERTa model file is large (560 MB), it is not stored directly in this GitHub repository - beyond the limit of github. Instead, it is hosted securely on Google Drive and to run it 
-
-you have to use following code --as all .pkl, .modeltensor files are present in google drive.
+Because the fine-tuned RoBERTa model file is large (560 MB), it is not stored directly in this GitHub repository - beyond the limit of github. Instead, data and models is stored securely on Google Drive
+-as all .pkl, .modeltensor files are present in google drive.
 
 
 
 
 ##  Core Initialization & Asset Pipeline
 
-The code below shows how the system dynamically checks for local files from my google drive
-
+The code below shows how the system dynamically checks for local files from  google drive
 
 import os
 import pickle
@@ -52,7 +50,7 @@ from sentence_transformers import SentenceTransformer
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Running on :", device)
 
-# 2. Local File Configurations (Updated from Google Colab paths)
+# 2. Local File Configurations 
 ROBERTA_MODEL_PATH = "./best_roberta_model"
 MLB_PATH = "./mlb.pkl"
 FAISS_INDEX_PATH = "./faiss.index"
