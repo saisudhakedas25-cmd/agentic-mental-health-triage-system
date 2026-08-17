@@ -72,8 +72,8 @@ EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 # Helper function 
 
-def verify_and_download_assets():
 
+def verify_and_download_assets():
     assets = {
     
         ROBERTA_MODEL_PATH: "https://google.com",
