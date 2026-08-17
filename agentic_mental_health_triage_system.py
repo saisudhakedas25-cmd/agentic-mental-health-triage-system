@@ -734,7 +734,7 @@ from transformers import get_linear_schedule_with_warmup
 # Hyperparameters
 
 
-EPOCHS = 3
+EPOCHS = 1
 
 LEARNING_RATE = 2e-5
 
