@@ -20,48 +20,26 @@ This project combines:
 ##  System Pipeline
 
 
-Patient Conversation
-        ↓
-        
-Data Processing
-        ↓
-        
-RoBERTa Symptom Classification
-        ↓
-        
-Risk Assessment
-        ↓
-        
-SHAP Explainability
-        ↓
-        
-NICE Guidelines
-        ↓
-        
-Sentence Transformers + FAISS Retrieval
-        ↓
-        
-RAG + LLM
+Patient Conversation -> Data Processing -> RoBERTa Symptom Classification -> Risk Assessment-> SHAP Explainability ->NICE Guidelines->Sentence Transformers + FAISS Retrieval->RAG + LLM
+Multi-Agent Workflow -> Clinical Explanation / Summary
 
-        ↓
-Multi-Agent Workflow
 
-        ↓
-Clinical Explanation / Summary
 
 
 ## Model Storage & Automated Setup
 
-Because the fine-tuned RoBERTa model file is large (560 MB), it is not stored directly in this GitHub repository. Instead, it is hosted securely on Google Drive and to run it 
+Because the fine-tuned RoBERTa model file is large (560 MB), it is not stored directly in this GitHub repository - beyond the limit of github. Instead, it is hosted securely on Google Drive and to run it 
 
 you have to use following code --as all .pkl, .modeltensor files are present in google drive.
 
-# if it is not working - you can contact me via email.I am happy to resolve the issue.
 
+# if it is not working - you can contact me via email. I am happy to resolve the issue.
+
+# code works perfectly fine --- after the tab : Loading all the pkl files and models from here for RAG without XAI--i.e. after training , all the models are invoked here onwards
 
 ##  Core Initialization & Asset Pipeline
 
-The code below shows how the system dynamically checks for local files, downloads them if missing, and loads the machine learning pipeline into memory:
+The code below shows how the system dynamically checks for local files from my google drive
 
 
 import os
