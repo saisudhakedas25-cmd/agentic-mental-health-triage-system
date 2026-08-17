@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-
-
 **PHASE 1 OF 3 : DATA PREPROCESSING AND DATA VISUALIZATION - DONE**
 
 At first my approach is to download the data from official website ,
