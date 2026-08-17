@@ -39,11 +39,17 @@ Because the fine-tuned RoBERTa model file is large (560 MB), it is not stored di
 The code below shows how the system dynamically checks for local files from  google drive
 
 import os
+
 import pickle
+
 import torch
+
 import faiss
+
 import gdown
+
 from transformers import RobertaTokenizer, RobertaForSequenceClassification
+
 from sentence_transformers import SentenceTransformer
 
 # 1. Device Setup
