@@ -67,18 +67,26 @@ EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 # Helper function 
 
 def verify_and_download_assets():
-   
+
     assets = {
+    
         ROBERTA_MODEL_PATH: "https://google.com",
+        
         MLB_PATH: "https://google.com",
+        
         FAISS_INDEX_PATH: "https://google.com",
+        
         CHUNKS_PATH: "https://google.com"
     }
     
     for path, url in assets.items():
+    
         if not os.path.exists(path):
+        
             print(f" Downloading missing asset: {path}...")
+            
             gdown.download(url, path, quiet=False, fuzzy=True)
+            
             print(f" {path} downloaded successfully.")
 
 # Run asset verification before loading the models
