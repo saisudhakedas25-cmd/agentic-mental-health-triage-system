@@ -47,19 +47,27 @@ from transformers import RobertaTokenizer, RobertaForSequenceClassification
 from sentence_transformers import SentenceTransformer
 
 # 1. Device Setup
+
+# here is device setup
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Running on :", device)
 
 # 2. Local File Configurations 
+
 ROBERTA_MODEL_PATH = "./best_roberta_model"
+
 MLB_PATH = "./mlb.pkl"
+
 FAISS_INDEX_PATH = "./faiss.index"
+
 CHUNKS_PATH = "./chunks.pkl"
+
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 # Helper function 
+
 def verify_and_download_assets():
-    # Example mapping: local path to its Google Drive shared file link
+   
     assets = {
         ROBERTA_MODEL_PATH: "https://google.com",
         MLB_PATH: "https://google.com",
@@ -74,43 +82,64 @@ def verify_and_download_assets():
             print(f" {path} downloaded successfully.")
 
 # Run asset verification before loading the models
+
 verify_and_download_assets()
 
 # 3. Load RoBERTa Tokenizer
+
 print("\nLoading RoBERTa Tokenizer...")
+
 tokenizer = RobertaTokenizer.from_pretrained(ROBERTA_MODEL_PATH)
+
 print("Tokenizer Loaded.")
 
 # 4. Load Trained RoBERTa Model
+
 print("\nLoading Trained RoBERTa Model...")
+
 model = RobertaForSequenceClassification.from_pretrained(ROBERTA_MODEL_PATH)
+
 model.to(device)
+
 model.eval()
+
 print("RoBERTa Model Loaded Successfully.")
 
 # 5. Load MultiLabelBinarizer
+
 print("\nLoading MultiLabelBinarizer...")
+
 with open(MLB_PATH, "rb") as f:
     mlb = pickle.load(f)
+    
 print("Labels Loaded:", mlb.classes_)
 
 # 6. Load SentenceTransformer
+
 print("\nLoading SentenceTransformer...")
+
 embedding_model = SentenceTransformer(EMBEDDING_MODEL)
+
 print("SentenceTransformer Ready.")
 
 # 7. Load FAISS Index
+
 print("\nLoading FAISS Index...")
+
 index = faiss.read_index(FAISS_INDEX_PATH)
+
 print("Vectors inside FAISS :", index.ntotal)
 
 # 8. Load NICE Chunks
+
 print("\nLoading NICE Guideline Chunks...")
+
 with open(CHUNKS_PATH, "rb") as f:
     chunks = pickle.load(f)
 print("Total Chunks :", len(chunks))
 
 print("\nSystem Ready.")
+
 
 # Note:
 1)  code works perfectly fine --- after the tab/cell in .ipynb file: Loading all the pkl files and models from here for RAG without XAI--i.e. because after training completion, all the saved models are called here onwards
