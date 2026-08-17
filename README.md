@@ -4,7 +4,7 @@ An Agentic Retrieval-Augmented Mental Health Triage System for Explainable Depre
 
 An Agentic RAG-based NLP system for explainable depression-risk assessment from patient conversations.
 
-## 🔹 Overview
+## Overview
 
 This project combines:
 
@@ -17,7 +17,7 @@ This project combines:
 - Multi-Agent Workflow→ Coordinates the different system components
 - Gradio → Interactive user interface
 
-## 🔹 System Pipeline
+##  System Pipeline
 
 
 Patient Conversation
@@ -41,7 +41,7 @@ Multi-Agent Workflow
 Clinical Explanation / Summary
 
 
-## 🔹 Model Storage & Automated Setup
+## Model Storage & Automated Setup
 
 Because the fine-tuned RoBERTa model file is large (560 MB), it is not stored directly in this GitHub repository. Instead, it is hosted securely on Google Drive and to run it 
 
@@ -50,7 +50,7 @@ you have to use following code --as all .pkl, .modeltensor files are present in 
 # if it is not working - you can contact me via email.I am happy to resolve the issue.
 
 
-## 🔹 Core Initialization & Asset Pipeline
+##  Core Initialization & Asset Pipeline
 
 The code below shows how the system dynamically checks for local files, downloads them if missing, and loads the machine learning pipeline into memory:
 
@@ -86,9 +86,9 @@ def verify_and_download_assets():
     
     for path, url in assets.items():
         if not os.path.exists(path):
-            print(f"📥 Downloading missing asset: {path}...")
+            print(f" Downloading missing asset: {path}...")
             gdown.download(url, path, quiet=False, fuzzy=True)
-            print(f"✅ {path} downloaded successfully.")
+            print(f" {path} downloaded successfully.")
 
 # Run asset verification before loading the models
 verify_and_download_assets()
