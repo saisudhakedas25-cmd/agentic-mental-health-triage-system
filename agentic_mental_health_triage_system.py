@@ -51,7 +51,7 @@ with open(output_file_path, "w", encoding = "utf-8") as f:
 
 print("combined json data successfully saved to:", output_file_path)
 
-output_file_path = "/content/drive/MyDrive/Your_Folder_Name/combined_dataset.json"
+output_file_path = "/content/drive/MyDrive/mental_health_mendely_dataset/combined_dataset.json"
 
 with open(output_file_path, "w", encoding="utf-8") as f:
     json.dump(all_data, f, ensure_ascii=False, indent=4)
@@ -2080,7 +2080,7 @@ The system predicts:
 
         analyse_btn = gr.Button(
 
-            "🔍 Analyse",
+            " Analyse",
 
             variant="primary"
 
@@ -4025,7 +4025,7 @@ def step_1_classification_and_retrieval(patient_text):
 
 def step_2_generate_report(patient_text, pipeline_output_state):
     if not pipeline_output_state or "Evidence" not in pipeline_output_state:
-        return "⚠️ Error: Please execute Step 1 analysis first before generating the report."
+        return " Error: Please execute Step 1 analysis first before generating the report."
 
     print("Generating grounded clinical report via CPU OpenVINO...")
     clinical_report = generate_clinical_report(patient_text, pipeline_output_state)
@@ -4037,7 +4037,7 @@ def step_2_generate_report(patient_text, pipeline_output_state):
 
 def step_3_generate_xai(patient_text, pipeline_output_state):
     if not pipeline_output_state or "Symptoms" not in pipeline_output_state:
-        return "⚠️ Error: Please execute Step 1 analysis first before generating XAI logs."
+        return " Error: Please execute Step 1 analysis first before generating XAI logs."
 
     print("Generating Explainable AI justifications via CPU OpenVINO...")
     xai_justifications = generate_xai_justifications(patient_text, pipeline_output_state)
@@ -5769,7 +5769,7 @@ def run_agent_2(previous_output):
     if not previous_output:
 
         return (
-            "⚠️ Please run Agent 1 first.",
+            " Please run Agent 1 first.",
             {}
         )
 
@@ -5802,7 +5802,7 @@ def run_agent_3(previous_output):
     if not previous_output:
 
         return (
-            "⚠️ Please run Agent 1 and Agent 2 first.",
+            " Please run Agent 1 and Agent 2 first.",
             {}
         )
 
@@ -5833,7 +5833,7 @@ def run_agent_4(previous_output):
 
     if not previous_output:
         return (
-            "⚠️ Please run Agents 1–3 first.",
+            " Please run Agents 1–3 first.",
             {}
         )
 
@@ -5931,7 +5931,7 @@ def run_agent_5(previous_output):
     if not previous_output:
 
         return (
-            "⚠️ Please run Agents 1–4 first.",
+            " Please run Agents 1–4 first.",
             {}
         )
 
@@ -6051,7 +6051,7 @@ independent agents:
     gr.Markdown("## Agent 1 — Symptom Classification Agent")
 
     btn_agent_1 = gr.Button(
-        "▶ Run Agent 1: Symptom Classification",
+        " Run Agent 1: Symptom Classification",
         variant="primary"
     )
 
@@ -6074,7 +6074,7 @@ independent agents:
     gr.Markdown("## Agent 2 — Risk Assessment Agent")
 
     btn_agent_2 = gr.Button(
-        "▶ Run Agent 2: Risk Assessment",
+        " Run Agent 2: Risk Assessment",
         variant="primary"
     )
 
@@ -6090,7 +6090,7 @@ independent agents:
     gr.Markdown("## Agent 3 — NICE Guideline Retrieval Agent")
 
     btn_agent_3 = gr.Button(
-        "▶ Run Agent 3: NICE Guideline Retrieval",
+        " Run Agent 3: NICE Guideline Retrieval",
         variant="primary"
     )
 
@@ -6106,7 +6106,7 @@ independent agents:
     gr.Markdown("## Agent 4 — SHAP Explanation Agent")
 
     btn_agent_4 = gr.Button(
-        "▶ Run Agent 4: Explainable AI (SHAP)",
+        " Run Agent 4: Explainable AI (SHAP)",
         variant="primary"
     )
 
@@ -6122,7 +6122,7 @@ independent agents:
     gr.Markdown("## Agent 5 — Clinical Report Agent")
 
     btn_agent_5 = gr.Button(
-        "▶ Run Agent 5: Generate Clinical Report",
+        " Run Agent 5: Generate Clinical Report",
         variant="primary"
     )
 
