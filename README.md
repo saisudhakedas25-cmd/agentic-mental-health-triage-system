@@ -22,21 +22,30 @@ This project combines:
 
 Patient Conversation
         ↓
+        
 Data Processing
         ↓
+        
 RoBERTa Symptom Classification
         ↓
+        
 Risk Assessment
         ↓
+        
 SHAP Explainability
         ↓
+        
 NICE Guidelines
         ↓
+        
 Sentence Transformers + FAISS Retrieval
         ↓
+        
 RAG + LLM
+
         ↓
 Multi-Agent Workflow
+
         ↓
 Clinical Explanation / Summary
 
